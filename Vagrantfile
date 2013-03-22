@@ -22,9 +22,9 @@ Vagrant::Config.run do |config|
   # any other machines on the same network, but cannot be accessed (through this
   # network interface) by any external networks.
   # config.vm.network :hostonly, "192.168.33.10"
-  #config.vm.forward_port 22, 10122
-  #config.vm.forward_port 80, 10180
-  config.vm.network :hostonly, "192.168.50.10"
+  config.vm.forward_port 22, 10022
+  config.vm.forward_port 80, 10080
+  config.vm.network :hostonly, "192.168.50.100"
   config.vm.host_name = "chef-solo.localhost"
 
   # Assign this VM to a bridged network, allowing you to connect directly to a
@@ -70,7 +70,12 @@ Vagrant::Config.run do |config|
   #
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "./cookbooks"
-    chef.add_recipe "hello"
+    #chef.add_recipe "hello"
+
+    chef.add_recipe "yum::epel"
+    chef.add_recipe "nginx"
+    chef.json = { "nginx" => { "port" => 10080 }}
+
   #   chef.cookbooks_path = "../my-recipes/cookbooks"
   #   chef.roles_path = "../my-recipes/roles"
   #   chef.data_bags_path = "../my-recipes/data_bags"
