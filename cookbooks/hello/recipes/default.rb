@@ -8,6 +8,12 @@
 #
 log "Hello, Chef!"
 
-package "zsh" do
-  action :install
+#package "zsh" do
+#  action :install
+#end
+
+%w{zsh gcc make readline-devel}.each do |pkg|
+  package pkg do
+    action :install
+  end
 end
