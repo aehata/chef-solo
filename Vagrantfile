@@ -70,13 +70,13 @@ Vagrant::Config.run do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding 
   # some recipes and/or roles.
   #
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "./cookbooks"
-    #chef.add_recipe "hello"
+  #config.vm.provision :chef_solo do |chef|
+    #chef.cookbooks_path = "./cookbooks"
 
-    chef.add_recipe "yum::epel"
-    chef.add_recipe "nginx"
-    chef.json = { "nginx" => { "port" => 10080 }}
+    #chef.add_recipe "hello"
+    #chef.add_recipe "yum::epel"
+    #chef.add_recipe "nginx"
+    #chef.json = { "nginx" => { "port" => 10080 }}
 
   #   chef.cookbooks_path = "../my-recipes/cookbooks"
   #   chef.roles_path = "../my-recipes/roles"
@@ -86,7 +86,7 @@ Vagrant::Config.run do |config|
   #
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
-  end
+  #end
 
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
