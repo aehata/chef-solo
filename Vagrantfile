@@ -25,7 +25,7 @@ Vagrant::Config.run do |config|
   #config.vm.forward_port 22, 10122
   #config.vm.forward_port 80, 10180
   config.vm.network :hostonly, "192.168.50.10"
-  config.vm.host_name = "dev00.vm.local"
+  config.vm.host_name = "chef-solo.localhost"
 
   # Assign this VM to a bridged network, allowing you to connect directly to a
   # network using the host's network device. This makes the VM appear as another
@@ -68,9 +68,9 @@ Vagrant::Config.run do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding 
   # some recipes and/or roles.
   #
-  #config.vm.provision :chef_solo do |chef|
-    #chef.cookbooks_path = "./cookbooks"
-    #chef.add_recipe "hello"
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "./cookbooks"
+    chef.add_recipe "hello"
   #   chef.cookbooks_path = "../my-recipes/cookbooks"
   #   chef.roles_path = "../my-recipes/roles"
   #   chef.data_bags_path = "../my-recipes/data_bags"
@@ -79,7 +79,7 @@ Vagrant::Config.run do |config|
   #
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
-  #end
+  end
 
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
