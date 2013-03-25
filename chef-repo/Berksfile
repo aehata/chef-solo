@@ -1,0 +1,7 @@
+# Berksfile
+site :opscode
+cookbook 'yum'
+cookbook 'iptables'
+cookbook 'sudo'
+cookbook 'apache2'
+cookbook 'logrotate'
