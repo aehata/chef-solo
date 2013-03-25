@@ -18,3 +18,35 @@ directory '/tmp/hoge/' do
   mode   '0755'
   action :create
 end
+
+user "aehata" do
+  comment "hogehogehoge"
+  group "users"
+  home "/home/aehata"
+  shell "/bin/bash"
+  password nil
+  supports :manage_home => true
+  action   [:create, :manage]
+end
+
+group "wheel" do
+  action :modify
+  members [ 'aehata' ]
+  append true
+end
+
+group 'aehata-group' do
+  group_name 'aehata-group'
+  gid        999
+  action     [:create]
+end
+
+user "aehata2" do
+  comment "hogefuga"
+  group "aehata-group"
+  home "/home/aehata2"
+  shell "/bin/bash"
+  password nil
+  supports :manage_home => true
+  action   [:create, :manage]
+end
