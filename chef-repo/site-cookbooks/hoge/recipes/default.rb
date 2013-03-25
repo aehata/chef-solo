@@ -24,7 +24,7 @@ user "aehata" do
   group "users"
   home "/home/aehata"
   shell "/bin/bash"
-  password nil
+  password "$1$RKSBevA5$gnbqAr.K0UCConMxclT6d1"
   supports :manage_home => true
   action   [:create, :manage]
 end
