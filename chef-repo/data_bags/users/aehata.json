@@ -1,0 +1,9 @@
+// aehata.json
+{
+    "id" : "aehata",
+    "username" : "aehata",
+    "group" : "users",
+    "home" : "/home/aehata",
+    "shell" : "/bin/bash",
+    "password" : "$1$RKSBevA5$gnbqAr.K0UCConMxclT6d1"
+}
