@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: nginx
+# Cookbook Name:: hoge
 # Recipe:: default
 #
 # Copyright 2013, YOUR_COMPANY_NAME
