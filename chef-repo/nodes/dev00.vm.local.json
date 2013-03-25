@@ -1,8 +1,9 @@
 {
-    "nginx": {
-        "port" : 80
+    "apache": {
+        "listen_ports": [10080]
     },
-    "run_list":[
-        "hoge"
+    "run_list": [
+        "recipe[yum::epel]",
+        "recipe[apache2]"
     ]
 }
